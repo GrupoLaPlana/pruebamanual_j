@@ -22,7 +22,7 @@ sap.ui.define([
             },
             onRouteMatched: function(oEvent){
                 
-                oBinding = this.getView().byId("LineItemsSmartTable").getBinding('FlexItemData'); // valorar cambio
+                oBinding = this.getView().byId("LineItemsSmartTable").getBinding('FlexItemData'); // valorar cambio al item correcto
                 var aFilters = [
                     new sap.ui.model.Filter({
                         path: 'Vbeln',
