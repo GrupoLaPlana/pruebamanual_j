@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:core="sap.ui.core"
+xmlns:form="sap.ui.layout.form">
+    <ViewSettingsDialog id="_IDGenViewDialog1" confirm="onConfirmar">
+        <sortItems>
+            <ViewSettingsItem text="Nombre" key="Name1" />
+            <ViewSettingsItem text="Código Cliente" key="Kunnr" />
+        </sortItems> 
+        <groupItems>
+            <ViewSettingsItem text="Nombre" key="Name1" />
+            <ViewSettingsItem text="Código Cliente" key="Kunnr" selected="true"/>
+        </groupItems>   
+        <filterItems>
+            <ViewSettingsFilterItem id="idListTip" text="nombre" key="Name1">
+                <items>
+                    <ViewSettingsItem text="CARTON" key="CARTON" selected="true"/>
+                    <ViewSettingsItem text="CARTON" key="CARTON" />
+                </items>
+            </ViewSettingsFilterItem>
+            <ViewSettingsFilterItem id="idListCodCli" text="Código" key="Kunnr" items="{path:'/ClienteSet',
+                                                                      filters:[{
+                                                                      path: 'Pstlz',
+                                                                      operator: 'EQ',
+                                                                      value1: '12540'
+                                                                      }], parameters:{operationMode: 'Client'}}">
+                <items>
+                    <ViewSettingsItem text="{Kunnr}" key="{Kunnr}" />
+                </items>
+            </ViewSettingsFilterItem>
+        </filterItems>
+    </ViewSettingsDialog>
+</core:FragmentDefinition>

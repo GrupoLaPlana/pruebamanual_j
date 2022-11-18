@@ -1,0 +1,30 @@
+<mvc:View controllerName="es.seidor.curso.pruebamanualj.controller.DetalleCliente2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form" >
+    <Page id="page" title="Detalle 2" navButtonPress="onNavBack" showNavButton="true">
+        <content>
+            <Button id="_IDGenButton1" type="Reject" iconFirst="false" icon="sap-icon://clear-all"  text="{i18n>volver}"  press="onNavBack" />
+                <form:SimpleForm id="_IDGenSimpleForm1">
+                    <form:content>
+                        <ObjectHeader xmlns="sap.m" title="{Name1}" number="{Pstlz}" id="header0" intro="{Kunnr}">
+                            <attributes>
+                                <ObjectAttribute id="_IDGenObjectAttribute1" text="{Stras}" />
+                                <ObjectAttribute id="_IDGenObjectAttribute2" text="{Ort01}" />
+                                <ObjectAttribute id="_IDGenObjectAttribute3" text="{Land1}" />
+                            </attributes>
+                        </ObjectHeader>
+                    </form:content>
+                </form:SimpleForm>
+            <List id="ListaPedcli"
+                items="{misPedidos>/}" growing="true"
+                headerText="Pedido">
+                <ObjectListItem id="_IDGenObjectListItem1"
+                    title="{misPedidos>Vbeln}"
+                    type="Active"
+                    number="{misPedidos>Netwr}"
+                    numberUnit="{misPedidos>Waerk}">
+                </ObjectListItem>
+            </List>
+         </content>
+    </Page>
+</mvc:View>

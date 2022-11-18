@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.5"
+metadata:
+  name: es.seidor.curso.pruebamanualj
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: http://sapdes.servidor.clp:8000
+          client: "100"
+        app:
+          name: ZREPOS_DES_JUAN
+          description: Prueba curso sapui5
+          package: ZSUI5_CURSO
+          transport: CLXK910667

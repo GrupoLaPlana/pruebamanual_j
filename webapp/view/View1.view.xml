@@ -1,0 +1,14 @@
+<mvc:View controllerName="es.seidor.curso.pruebamanualj.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form" >
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Button id="_IDGenButton1" type="Reject" iconFirst="false" icon="sap-icon://clear-all"  text="{i18n>volver}"  press="onNavBack" />
+            <form:SimpleForm id="_IDGenSimpleForm1">
+            <form:content>
+            <Input  id="idInputView1" />
+            </form:content>
+            </form:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

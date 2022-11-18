@@ -1,0 +1,56 @@
+<mvc:View controllerName="es.seidor.curso.pruebamanualj.controller.ListaClientesTB"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:table="sap.ui.table"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+    
+    <Page id="page" title="{i18n>title}" navButtonPress="onNavBack" showNavButton="true">
+        <content>
+            <form:SimpleForm id="_IDGenSimpleForm1">
+            <form:content>
+
+                <!--He eliminado el atributo enableAutoColumnWidth="true" y app:useSmartToggle="true" por no ser compatible-->
+                <smartTable:SmartTable id="LineItemsSmartTable" entitySet="{/ClienteSet}" 
+                                                                smartFilterId="smartFilterBar"
+                                                                tableType="Table" useExportToExcel="true" 
+                                                                beforeExport="onBeforeExport" 
+                                                                useVariantManagement="true" 
+                                                                useTablePersonalisation="true" 
+                                                                header="Clientes" 
+                                                                showRowCount="true" 
+                                                                persistencyKey="SmartTableAnalytical_Explored" 
+                                                                enableAutoBinding="true" 
+                                                                class="sapUiResponsiveContentPadding" 
+                                                                editTogglable="true" 
+                                                                >
+				    <!-- layout data used to make the table growing but the filter bar fixed -->
+				    <smartTable:layoutData>
+					    <FlexItemData id="IdLinTable" growFactor="1" baseSize="0%"/>
+                           				    </smartTable:layoutData>
+			    </smartTable:SmartTable>
+
+              <!--Esto es modelo sobre un LIST
+                <List id="idListaCli" items="{path:'/ClienteSet', parameters:{operationMode: 'Client'}}" growing="true" >
+                <headerToolbar>
+                    <Toolbar id="_IDGenToolbar1">
+                        <Switch id="idSwitch" customTextOn="cont" customTextOff="vista" />
+                        <SearchField id="idSearchCli" width="100%" liveChange="onSearchCliente" />
+                        <Button id="_IDGenButton2" press="onOpenFiltros" icon="sap-icon://customize"/>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    	<StandardListItem id="_IDGenStandardListItem1" press="onPressDetalleCliente"
+			                title="{Kunnr}"
+                            description="{Name1}"
+                        	type="Navigation" />
+
+                </items>
+
+            </List>-->
+            </form:content>
+            </form:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

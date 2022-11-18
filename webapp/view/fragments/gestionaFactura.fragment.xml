@@ -1,0 +1,31 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:core="sap.ui.core"
+xmlns:form="sap.ui.layout.form">
+    <Dialog id="_IDGenDialog7">
+        <content>
+        
+            <form:SimpleForm id="idSimFormCF7">
+                <Label id="_IDGenLabelx3" text="Nº Factura" /><Input id="idIFragmentClix7" value="{misFacturas>/VbelnVf}" editable="false" />
+                <Label id="_IDGenLabelx2" text="Fecha" /><DatePicker id="_IDGenDatePicker1" change="handleChange" displayFormat= "dd/MM/yyyy"
+                                                                        dateValue="{path:'misFacturas>/Fecha'}" />
+                <Label id="_IDGenLabelxx" text="Importe" /><Input id="idIFragmentImpx" value="{ path:'misFacturas>/Netwr',
+                                                                            type:'sap.ui.model.odata.type.Decimal',
+                                                                            formatOptions:{decimals: 2}
+                                                                           }" />
+                <Label id="_IDGenLabel4x" text="Moneda" /><Input id="idIFragmentMonx" value="{misFacturas>/Waers}" showValueHelp="true" valueHelpRequest="onPressVhMoneda"/>
+
+                <Label id="_IDGenLabelx5" text="Impuesto" /><Input id="idIFragmentimpux" value="{path:'misFacturas>/Impuesto'
+                                                                             type:'sap.ui.model.odata.type.Decimal',
+                                                                             formatOptions:{decimals: 2}
+                                                                            }" />
+            </form:SimpleForm>
+        </content>
+        <buttons>
+            <Button id="_IDGenButton72x" type="Accept" text="Modificar" press="onGestionaFacturaUpdate" />
+            <Button id="_IDGenButton73x" type="Accept" text="Borrar" press="onGestionaFacturaDelete" />
+            <Button id="_IDGenButton71x" type="Reject" text="Cerrar" press="onCerrarGestionaFactura" />
+    </buttons>
+    </Dialog>
+</core:FragmentDefinition>
+      

@@ -1,0 +1,39 @@
+<mvc:View controllerName="es.seidor.curso.pruebamanualj.controller.DetallePedido"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form" >
+    <Page id="page" title="Detalle Pedido" navButtonPress="onNavBack" showNavButton="true">
+        <content>
+            <Button id="_IDGenButton1" type="Reject" iconFirst="false" icon="sap-icon://clear-all"  text="{i18n>volver}"  press="onNavBack" />
+            <form:SimpleForm id="_IDGenSimpleForm1">
+             <form:content>
+               <ObjectHeader xmlns="sap.m" title="{Vbeln}" number="{Name1}" id="header0" intro="{Kunnr}">
+                    <attributes>
+                        <ObjectAttribute id="_IDGenObjectAttribute1" text="{path:'Netwr',
+                                                                            type:'sap.ui.model.odata.type.Decimal',
+                                                                            formatOptions:{ decimals: 2,
+                                                                                            groupingEnabled: false} 
+                                                                            }" />
+                        <ObjectAttribute id="_IDGenObjectAttribute2" text="{Waerk}" />
+                        <ObjectAttribute id="_IDGenObjectAttribute4" text="{path:'Erdat',
+                                                                            type:'sap.ui.model.odata.type.Date',
+                                                                            formatOptions:{
+                                                                                pattern:'dd.MM.yyyy' }
+                                                                            }" />
+                        <ObjectAttribute id="_IDGenObjectAttribute5" text="{path:'Erzet',
+                                                                            type:'sap.ui.model.odata.type.Time',
+                                                                            formatOptions:{
+                                                                                pattern:'HH:mm' }
+                                                                            }" />
+                    </attributes>
+                </ObjectHeader>
+            </form:content>
+            </form:SimpleForm>
+        </content>
+        <footer>
+            <Toolbar id="_IDGenToolbar1">
+                <Button id="_IDGenButton2" text="Crear Factura" press="onCrearFactura" />
+                <Button id="_IDGenButtonx" text="Visualiza Facturas" press="onVisualizaFacturas" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

@@ -1,0 +1,269 @@
+{
+    "_version": "1.42.0",
+    "sap.app": {
+        "id": "es.seidor.curso.pruebamanualj",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.7.6",
+            "toolsId": "89c0ed2d-d413-47ea-a091-5b12e370e7c2"
+        },
+        "dataSources": {
+            "ZSUI5_CURSO_J_SRV": {
+                "uri": "/sap/opu/odata/sap/ZSUI5_CURSO_J_SRV",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "annotations": [],
+                    "localUri": "localService/ZSUI5_CURSO_J_SRV/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.71.4",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "es.seidor.curso.pruebamanualj.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "ZSUI5_CURSO_J_SRV",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "es.seidor.curso.pruebamanualj.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false,
+                "transition": "slide",
+                "bypassed": {
+                    "target": [
+                        "NotFound"
+                    ]
+                }
+            },
+            "routes": [
+                {
+                    "name": "RouteView1",
+                    "pattern": "View1/{nombre}/:areat:",
+                    "target": [
+                        "TargetView1"
+                    ]
+                },
+                {
+                    "name": "RouteMain",
+                    "pattern": "",
+                    "target": [
+                        "TargetMain"
+                    ]
+                },
+                {
+                    "name": "RouteListaClientes",
+                    "pattern": "ListaClientes",
+                    "target": [
+                        "TargetListaClientes"
+                    ]
+                },
+                {
+                    "name": "RouteListaClientesTB",
+                    "pattern": "ListaClientesTB",
+                    "target": [
+                        "TargetListaClientesTB"
+                    ]
+                },
+                {
+                  "name": "RouteDetalleCliente",
+                  "pattern": "DetalleCliente/{cliente}",
+                  "target": [
+                      "TargetDetalleCliente"
+                  ]
+              },
+              {
+                "name": "RouteDetalleCliente2",
+                "pattern": "DetalleCliente2/{cliente2}",
+                "target": [
+                    "TargetDetalleCliente2"
+                ]
+            },
+            {
+              "name": "RouteDetallePedido",
+              "pattern": "DetallePedido/{pedido}",
+              "target": [
+                  "TargetDetallePedido"
+              ]
+          },
+          {
+            "name": "RouteListaFacturas",
+            "pattern": "ListaFacturas/{pedido}",
+            "target": [
+                "TargetListaFacturas"
+            ]
+        },
+        {
+          "name": "RouteListaClientesSA",
+          "pattern": "ListaClientesSA",
+          "target": ["TargetClientesSA","TargetDetalleClienteSA"]
+      },
+      {
+        "name": "RouteDetalleClienteSA",
+        "pattern": "ListaClientesSA/{cliente}",
+        "target": ["TargetClientesSA","TargetDetalleClienteSA"]
+    }
+            ],
+            "targets": {
+                "TargetView1": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "View1",
+                    "viewName": "View1"
+                },
+                "NotFound": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "NotFound",
+                    "viewName": "NotFound"
+                },
+                "TargetMain": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Main",
+                    "viewName": "Main"
+                },
+                "TargetListaClientes": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "ListaClientes",
+                    "viewName": "ListaClientes"
+                },
+                "TargetListaClientesTB": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "ListaClientesTB",
+                    "viewName": "ListaClientesTB"
+                },
+                "TargetDetalleCliente": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "DetalleCliente",
+                    "viewName": "DetalleCliente"
+                },
+                "TargetDetalleCliente2": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "DetalleCliente2",
+                    "viewName": "DetalleCliente2"
+                },
+                
+                "TargetDetallePedido": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "DetallePedido",
+                    "viewName": "DetallePedido"
+                },
+                "TargetListaFacturas": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "ListaFacturas",
+                    "viewName": "ListaFacturas"
+                },
+
+                "SplitAppClientes":
+                {
+                    "viewType": "XML",
+                    "viewName": "SplitAppClientes"
+                },
+                "TargetClientesSA":
+                {
+                    "viewType": "XML",
+                    "viewName": "ListaClientesSA",
+                    "parent":   "SplitAppClientes",
+                    "controlId": "idSplitAppClientes",
+                    "controlAggregation": "masterPages"
+                },
+                "TargetDetalleClienteSA":
+                {
+                    "viewType": "XML",
+                    "viewName": "DetalleClienteSA",
+                    "parent":   "SplitAppClientes",
+                    "controlId": "idSplitAppClientes",
+                    "controlAggregation": "detailPages"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "es.seidor.curso.pruebamanualj.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}

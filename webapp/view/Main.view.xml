@@ -1,0 +1,53 @@
+<mvc:View controllerName="es.seidor.curso.pruebamanualj.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form" >
+    <Page id="idPageMain" title="{i18n>title}">
+        <content>
+<!--            <Button type="Reject" iconFirst="False" icon="sap-icon://clear-all"  text="hola"  press="onPressSaluda" /> -->
+            <Button text="Close" press="onPressCierraAPP"/>
+            
+        
+            <form:SimpleForm id="idSimpleForm" class="zona1">
+               
+                <Label text= "{i18n>tclient}"  />
+                    <Input id="idDatoEnviado" placeholder="valor obligatorio" change="onChangeInput" class="sapUiTinyMargin" width="30%"/>
+
+                <Label text= "Recogido" />
+                    <Input id="idDatoRecogido"  class="sapUiTinyMargin" width="30%"/>
+
+                <Label text= "Fecha:" class="sapUiTinyMargin" />
+                <DatePicker change="handleChange" displayFormat="dd.MM.yyyy" width="10%"/>
+                
+
+                <Label text= "Contraseña" class="sapUiTinyMargin" />
+                    <Input id="passwd" type="Password" placeholder="Entre contraseña"  change="onChangePasswd" class="sapUiTinyMargin" width="15%" />
+             
+            </form:SimpleForm>
+        
+            <form:SimpleForm id="idSimpleForm2" class="zona2">
+        
+                <Label text= "Sexo:" class="sapUiTinyMargin" />
+                <RadioButtonGroup id="grupo1" valueState="Success" >
+                    <RadioButton  text="Varón" selected="true" />
+                    <RadioButton  text="Hembra" />
+                </RadioButtonGroup>
+                <Label text= "Metodo Pago:" class="sapUiTinyMargi" />
+                <RadioButtonGroup id="grupo2" valueState="Success" columns="2" >
+                    <RadioButton  text="Visa" selected="true" />
+                    <RadioButton  text="Pagaré" />
+                    <RadioButton  text="Bizum" />
+                    <RadioButton  text="M.Clas" />
+                </RadioButtonGroup>
+            </form:SimpleForm>
+        
+        </content>
+        <footer>
+            <Toolbar>
+                <Button text="View1 /si tiene valores" press="onPressNavegaView1" />
+                <Button text="ListaClientes" press="onPressNavegaListaClientes" />
+                <Button text="SPLITListaClientes" press="onPressNavegaSPListaClientes" />
+                <Button text="TABLEListaClientes" press="onPressNavegaTableClientes" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

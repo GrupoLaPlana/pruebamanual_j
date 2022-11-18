@@ -1,0 +1,30 @@
+<mvc:View controllerName="es.seidor.curso.pruebamanualj.controller.ListaFacturas"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form" >
+    <Page id="page" title="{i18n>title}" navButtonPress="onNavBack" showNavButton="true">
+        <content>
+            <Button id="_IDGenButton33" type="Reject" iconFirst="false" icon="sap-icon://clear-all"  text="{i18n>volver}"  press="onNavBack" />
+            <form:SimpleForm id="_IDGenSimpleForm1">
+            <form:content>
+              <List id="idListaFacturas" items="{/FacturaSet}" growing="true" >
+                <headerToolbar>
+                    <Toolbar id="_IDGenToolbar1">
+                        <Switch id="idSwitch333" customTextOn="cont" customTextOff="vista" />
+                        <SearchField id="idSearchFras" width="100%" liveChange="onSearchFactura" />
+                        <Button id="_IDGenButton21" press="onOpenFiltros" icon="sap-icon://customize"/>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    	<StandardListItem id="_IDGenStandardListItem21" press="onPressGestionaFactura"
+			                title="{VbelnVf}"
+                            description="{Netwr}"
+                        	type="Navigation" />
+
+                </items>
+
+            </List>
+            </form:content>
+            </form:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

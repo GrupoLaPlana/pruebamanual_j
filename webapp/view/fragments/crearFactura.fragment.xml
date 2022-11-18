@@ -1,0 +1,30 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:core="sap.ui.core"
+xmlns:form="sap.ui.layout.form">
+    <Dialog id="_IDGenDialog1">
+        <content>
+        
+            <form:SimpleForm id="idSimFormCF">
+                <Label id="_IDGenLabelc81" text="Nº Pedido" /><Input id="idIFragmentClic" value="{miFactura>/numPedido}" />
+                <Label id="_IDGenLabelcc81" text="Fecha" /><DatePicker id="_IDGenDatePicker1" change="handleChange" displayFormat= "dd.MM.yyyy"
+                                                                        dateValue="{path:'miFactura>/fecha'}" />
+                <Label id="_IDGenLabelc91" text="Importe" /><Input id="idIFragmentImpc" value="{ path:'miFactura>/importe',
+                                                                            type:'sap.ui.model.odata.type.Decimal',
+                                                                            formatOptions:{decimals: 2}
+                                                                           }" />
+                <Label id="_IDGenLabelc82" text="Moneda" /><Input id="idIFragmentMonc" value="{miFactura>/moneda}" showValueHelp="true" valueHelpRequest="onPressVhMoneda"/>
+
+                <Label id="_IDGenLabelc83" text="Impuesto" /><Input id="idIFragmentimpuc" value="{path:'miFactura>/impuesto'
+                                                                             type:'sap.ui.model.odata.type.Decimal',
+                                                                             formatOptions:{decimals: 2}
+                                                                            }" />
+            </form:SimpleForm>
+        </content>
+        <buttons>
+            <Button id="_IDGenButton1c" type="Reject" text="Cerrar" press="onCerrarCrearFactura" />
+            <Button id="_IDGenButton2c" type="Accept" text="Crear" press="onCrearFacturaDo" />
+    </buttons>
+    </Dialog>
+</core:FragmentDefinition>
+      

@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:core="sap.ui.core"
+xmlns:form="sap.ui.layout.form">
+    	<SelectDialog
+				title="Selección moneda"
+                confirm="onSelectMoneda"
+                liveChange="onSearchMoneda"
+		    items="{path:'/MonedaSet' , parameters:{operationMode:'Client'}}">
+            <items>
+		        <StandardListItem
+			        title="{Waers}"
+			        description="{Ltext}"
+			        type="Active" />
+            </items>
+	    </SelectDialog>
+</core:FragmentDefinition>

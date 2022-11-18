@@ -1,0 +1,29 @@
+<mvc:View controllerName="es.seidor.curso.pruebamanualj.controller.ListaClientesSA"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form" >
+    <Page id="page" title="{i18n>title}" navButtonPress="onNavBack" showNavButton="true">
+        <content>
+            <Button id="_IDGenButton1sa" type="Reject" iconFirst="false" icon="sap-icon://clear-all"  text="{i18n>volver}"  press="onNavBack" />
+            <form:SimpleForm id="_IDGenSimpleForm1sa">
+            <form:content>
+              <List id="idListaCli" items="{path:'/ClienteSet', parameters:{operationMode: 'Client'}}" growing="true" >
+                <headerToolbar>
+                    <Toolbar id="_IDGenToolbar1">
+                        <SearchField id="idSearchClisa" width="100%" liveChange="onSearchCliente" />
+                        <Button id="_IDGenButton2" press="onOpenFiltros" icon="sap-icon://customize"/>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    	<StandardListItem id="_IDGenStandardListItem1" press="onPressDetalleCliente"
+			                title="{Kunnr}"
+                            description="{Name1}"
+                        	type="Navigation" />
+
+                </items>
+
+            </List>
+            </form:content>
+            </form:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>
