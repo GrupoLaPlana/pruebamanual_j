@@ -7,7 +7,7 @@ sap.ui.define([
      */
     function (Controller) {
         "use strict";
-
+//hola
         return Controller.extend("es.seidor.curso.pruebamanualj.controller.DetalleCliente", {
             onInit: function () {
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
