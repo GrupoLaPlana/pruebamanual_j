@@ -89,7 +89,7 @@ sap.ui.define([
                    //oNombre.setValue("");
                    // oDatoRec.setValue(sValorCampoCliente);
                 };                
-     
+     //hola
             },
             onPressNavegaView1: function(){
                 var sNombre = this.getView().byId("idDatoRecogido").getValue();
