@@ -62,7 +62,7 @@ sap.ui.define([
                 oFactura.fecha = new Date(Date.UTC(oFactura.fecha.getFullYear(),
                     oFactura.fecha.getMonth(),oFactura.fecha.getDate()));
 
-                this.getView().getModel().create("/FacturaSet",{
+                this.getView().getModel().create("/FacturaSet",{    
                                                     Vbeln: oFactura.numPedido,
                                                     Fecha: oFactura.fecha,
                                                     Impuesto: oFactura.impuesto+'',
@@ -77,6 +77,7 @@ sap.ui.define([
                                                         error: function(e) {
                                                             MessageBox.error("createError"); }
                                                      })
+                                                     // hola
             },
             onCerrarCrearFactura: function() {
                 this.oDialogCrearFactura.close();
