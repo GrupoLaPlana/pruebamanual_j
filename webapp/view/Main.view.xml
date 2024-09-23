@@ -4,49 +4,49 @@
     <Page id="idPageMain" title="{i18n>title}">
         <content>
 <!--            <Button type="Reject" iconFirst="False" icon="sap-icon://clear-all"  text="hola"  press="onPressSaluda" /> -->
-            <Button text="Close" press="onPressCierraAPP"/>
+            <Button id="_IDGenButton5" text="Close" press="onPressCierraAPP"/>
             
         
             <form:SimpleForm id="idSimpleForm" class="zona1">
                
-                <Label text= "{i18n>tclient}"  />
+                <Label id="_IDGenLabel3" text= "{i18n>tclient}"  />
                     <Input id="idDatoEnviado" placeholder="valor obligatorio" change="onChangeInput" class="sapUiTinyMargin" width="30%"/>
 
-                <Label text= "Recogido" />
+                <Label id="_IDGenLabel4" text= "Recogido" />
                     <Input id="idDatoRecogido"  class="sapUiTinyMargin" width="30%"/>
 
-                <Label text= "Fecha:" class="sapUiTinyMargin" />
-                <DatePicker change="handleChange" displayFormat="dd.MM.yyyy" width="10%"/>
+                <Label id="_IDGenLabel5" text= "Fecha:" class="sapUiTinyMargin" />
+                <DatePicker id="_IDGenDatePicker1" change="handleChange" displayFormat="dd.MM.yyyy" width="10%"/>
                 
 
-                <Label text= "Contraseña" class="sapUiTinyMargin" />
+                <Label id="_IDGenLabel6" text= "Contraseña" class="sapUiTinyMargin" />
                     <Input id="passwd" type="Password" placeholder="Entre contraseña"  change="onChangePasswd" class="sapUiTinyMargin" width="15%" />
              
             </form:SimpleForm>
         
             <form:SimpleForm id="idSimpleForm2" class="zona2">
         
-                <Label text= "Sexo:" class="sapUiTinyMargin" />
+                <Label id="_IDGenLabel1" text= "Sexo:" class="sapUiTinyMargin" />
                 <RadioButtonGroup id="grupo1" valueState="Success" >
-                    <RadioButton  text="Varón" selected="true" />
-                    <RadioButton  text="Hembra" />
+                    <RadioButton id="_IDGenRadioButton5"  text="Varón" selected="true" />
+                    <RadioButton id="_IDGenRadioButton6"  text="Hembra" />
                 </RadioButtonGroup>
-                <Label text= "Metodo Pago:" class="sapUiTinyMargi" />
+                <Label id="_IDGenLabel2" text= "Metodo Pago:" class="sapUiTinyMargi" />
                 <RadioButtonGroup id="grupo2" valueState="Success" columns="2" >
-                    <RadioButton  text="Visa" selected="true" />
-                    <RadioButton  text="Pagaré" />
-                    <RadioButton  text="Bizum" />
-                    <RadioButton  text="M.Clas" />
+                    <RadioButton id="_IDGenRadioButton1"  text="Visa" selected="true" />
+                    <RadioButton id="_IDGenRadioButton2"  text="Pagaré" />
+                    <RadioButton id="_IDGenRadioButton3"  text="Bizum" />
+                    <RadioButton id="_IDGenRadioButton4"  text="M.Clas" />
                 </RadioButtonGroup>
             </form:SimpleForm>
         
         </content>
         <footer>
-            <Toolbar>
-                <Button text="View1 /si tiene valores" press="onPressNavegaView1" />
-                <Button text="ListaClientes" press="onPressNavegaListaClientes" />
-                <Button text="SPLITListaClientes" press="onPressNavegaSPListaClientes" />
-                <Button text="TABLEListaClientes" press="onPressNavegaTableClientes" />
+            <Toolbar id="_IDGenToolbar1">
+                <Button id="_IDGenButton1" text="View1 /si tiene valores" press="onPressNavegaView1" />
+                <Button id="_IDGenButton2" text="ListaClientes" press="onPressNavegaListaClientes" />
+                <Button id="_IDGenButton3" text="SPLITListaClientes" press="onPressNavegaSPListaClientes" />
+                <Button id="_IDGenButton4" text="TABLEListaClientes" press="onPressNavegaTableClientes" />
             </Toolbar>
         </footer>
     </Page>

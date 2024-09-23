@@ -1,4 +1,5 @@
-<mvc:View controllerName="es.seidor.curso.pruebamanualj.controller.ListaClientesTB"
+<mvc:View xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns:control="sap.gantt.control" 
+    controllerName="es.seidor.curso.pruebamanualj.controller.ListaClientesTB"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
     xmlns:form="sap.ui.layout.form" 
     xmlns:core="sap.ui.core"
@@ -7,50 +8,72 @@
     xmlns:smartTable="sap.ui.comp.smarttable">
     
     <Page id="page" title="{i18n>title}" navButtonPress="onNavBack" showNavButton="true">
-        <content>
-            <form:SimpleForm id="_IDGenSimpleForm1">
-            <form:content>
+    
+        <VBox id="_IDGenVBox1" fitContainer="true">
+            <!--form:SimpleForm id="_IDGenSimpleForm1">
+            <form:content-->
 
-                <!--He eliminado el atributo enableAutoColumnWidth="true" y app:useSmartToggle="true" por no ser compatible-->
-                <smartTable:SmartTable id="LineItemsSmartTable" entitySet="{/ClienteSet}" 
-                                                                smartFilterId="smartFilterBar"
-                                                                tableType="Table" useExportToExcel="true" 
-                                                                beforeExport="onBeforeExport" 
-                                                                useVariantManagement="true" 
-                                                                useTablePersonalisation="true" 
-                                                                header="Clientes" 
-                                                                showRowCount="true" 
-                                                                persistencyKey="SmartTableAnalytical_Explored" 
-                                                                enableAutoBinding="true" 
-                                                                class="sapUiResponsiveContentPadding" 
-                                                                editTogglable="true" 
-                                                                >
-				    <!-- layout data used to make the table growing but the filter bar fixed -->
-				    <smartTable:layoutData>
-					    <FlexItemData id="IdLinTable" growFactor="1" baseSize="0%"/>
-                           				    </smartTable:layoutData>
+                <smartfilterbar:SmartFilterBar id="idCliSmartFilterBar" persistencyKey="onSearchCliente" 
+			        considerSelectionVariants="true" entitySet="ClienteSet" enableBasicSearch="true" basicSearchFieldName="Name1" showClearButton="true">
+                    <smartfilterbar:controlConfiguration>
+                        <!---->
+                        <smartfilterbar:ControlConfiguration id="_IDGenControlConfiguration1" visibleInAdvancedArea="true" key="Kunnr" index="0" filterType="single" mandatory="mandatory"/>
+                        
+                        <smartfilterbar:ControlConfiguration id="_IDGenControlConfiguration2" visibleInAdvancedArea="true" key="Kunnr" index="1" controlType="auto"
+                                        mandatory="auto" label="Cliente" preventInitialDataFetchInValueHelpDialog="false"/> 
+                        <smartfilterbar:ControlConfiguration id="_IDGenControlConfiguration3" visibleInAdvancedArea="true" key="Name1" index="2" controlType="auto"
+                                        mandatory="auto" label="Nombre" preventInitialDataFetchInValueHelpDialog="false"/> 
+                    </smartfilterbar:controlConfiguration>
+                    <!--smartFilterBar:layoutData>
+                        <FlexItemData id="_IDGenFlexItemData1" shrinkFactor="0"/>
+                    </smartFilterBar:layoutData-->
+                </smartfilterbar:SmartFilterBar>
+
+                <smartTable:SmartTable id="idCliSmartTable" entitySet="ClienteSet" 
+                                                            smartFilterId="idCliSmartFilterBar"
+                                                            tableType="ResponsiveTable"
+                                                            useExportToExcel="false" 
+                                                            beforeExport="onBeforeExport" 
+                                                            useVariantManagement="false" 
+                                                            useTablePersonalisation="false" 
+                                                            header="Clientes" 
+                                                            showRowCount="true" 
+                                                            enableAutoBinding="true" 
+                                                            class="sapUiSmallMargin" 
+                                                            requestAtLeastFields="Kunnr,Name1,Ort01,Pstlz,Stras,Land1"
+                                                            editTogglable="true" 
+                                                            persistencyKey="kunnr"  
+                                                                                                                           
+                                                            >
+				    <Table id="_IDGenTable1" mode="MultiSelect">
+					    
+                        <columns>
+                            <Column id="_IDGenColumn1" demandPopin="true" width="100px" vAlign="Middle" hAlign="Begin"><Text id="_IDGenText7" text="Cliente" /></Column>
+                            <Column id="_IDGenColumn2" demandPopin="true" width="100px" vAlign="Middle" hAlign="Begin"><Text id="_IDGenText8" text="Nombre" /></Column>
+                            <Column id="_IDGenColumn3" demandPopin="true" width="100px" vAlign="Middle" hAlign="Begin"><Text id="_IDGenText9" text="Dirección" /></Column>
+                            <Column id="_IDGenColumn4" demandPopin="true" width="100px" vAlign="Middle" hAlign="End"><Text id="_IDGenText10" text="C.Postal" /></Column>
+                            <Column id="_IDGenColumn5" demandPopin="true" width="100px" vAlign="Middle" hAlign="Begin"><Text id="_IDGenText11" text="Población" /></Column>
+                            <Column id="_IDGenColumn6" demandPopin="true" width="100px" vAlign="Middle" hAlign="Center"><Text id="_IDGenText12" text="País" /></Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem id="_IDGenColumnListItem1" press="onPressDetalleCliente">
+                                <cells>
+                                    <Text id="_IDGenText1" text="{Kunnr} "/>
+                                    <Text id="_IDGenText2" text="{Name1}" />
+                                    <Text id="_IDGenText3" text="{Stras}" />
+                                    <Text id="_IDGenText4" text="{Pstlz}" />
+                                    <Text id="_IDGenText5" text="{Ort01}" />
+                                    <Text id="_IDGenText6" text="{Land1}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
 			    </smartTable:SmartTable>
 
-              <!--Esto es modelo sobre un LIST
-                <List id="idListaCli" items="{path:'/ClienteSet', parameters:{operationMode: 'Client'}}" growing="true" >
-                <headerToolbar>
-                    <Toolbar id="_IDGenToolbar1">
-                        <Switch id="idSwitch" customTextOn="cont" customTextOff="vista" />
-                        <SearchField id="idSearchCli" width="100%" liveChange="onSearchCliente" />
-                        <Button id="_IDGenButton2" press="onOpenFiltros" icon="sap-icon://customize"/>
-                    </Toolbar>
-                </headerToolbar>
-                <items>
-                    	<StandardListItem id="_IDGenStandardListItem1" press="onPressDetalleCliente"
-			                title="{Kunnr}"
-                            description="{Name1}"
-                        	type="Navigation" />
-
-                </items>
-
-            </List>-->
-            </form:content>
-            </form:SimpleForm>
-        </content>
+      
+            <!--/form:content>
+            </form:SimpleForm-->
+        </VBox>
+        
     </Page>
 </mvc:View>

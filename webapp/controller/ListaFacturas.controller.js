@@ -79,7 +79,7 @@ sap.ui.define([
                 var oFacturaUpd = this.getView().getModel("misFacturas").getData();
                 this.getView().setBusy(true);
                 this.getView().getModel().remove("/FacturaSet(VbelnVf='"+oFacturaUpd.VbelnVf+"')",
-                     {
+                                   {
                     success: function(oData){
                         MessageBox.success("createSuccess");
                         this.getView().setBusy(false);

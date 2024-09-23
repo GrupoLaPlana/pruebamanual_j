@@ -14,21 +14,19 @@ sap.ui.define([
             onInit: function () {
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 var oRuta = oRouter.getRoute("RouteListaClientesTB");
-                oRuta.attachMatched(this.onRouteMatched, this);
-                var oView = this.getView();
-                var oModelo = new sap.ui.model.json.JSONModel();
-                this.getView().setModel(oModelo, "miCliente");
-			    oView.setModel(oModelo);
-            },
+               // oRuta.attachMatched(this.onRouteMatched, this);
+                var oBinding = this.getView().byId("idCliSmartTable").getBinding("items");
+               
+             },
             onRouteMatched: function(oEvent){
                 
-                oBinding = this.getView().byId("LineItemsSmartTable").getBinding('FlexItemData'); // valorar cambio al item correcto
-                var aFilters = [
-                    new sap.ui.model.Filter({
-                        path: 'Vbeln',
-                        operator: 'EQ',
-                        value1: sPedido })
-                    ]
+                var oBinding = this.getView().byId("idCliSmartTable").getBinding("items"); // valorar cambio al item correcto
+               // var aFilters = [
+                 //   new sap.ui.model.Filter({
+                 //       path: 'Vbeln',
+                 //       operator: 'EQ',
+                 //       value1: sPedido })
+                  //  ];
                 oBinding.filter(); //oBinding.filter(aFilters);
                 
             },

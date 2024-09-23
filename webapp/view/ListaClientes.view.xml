@@ -15,7 +15,7 @@
                     </Toolbar>
                 </headerToolbar>
                 <items>
-                    	<StandardListItem id="_IDGenStandardListItem1" press="onPressDetalleCliente"
+                    	<StandardListItem id="_IDGenStandardListItem1" press="onPressDetalleCliente" 
 			                title="{Kunnr}"
                             description="{Name1}"
                         	type="Navigation" />
